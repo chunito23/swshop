@@ -1,0 +1,750 @@
+{
+    "products": [
+        {
+            "id": "prod1",
+            "name": "Luke Skywalker",
+            "price": 79.99,
+            "currency": "USD",
+            "description": "Figura de acción detallada de Luke Skywalker con múltiples puntos de movilidad y accesorios intercambiables.",
+            "image": "assets/images/luke.webp",
+            "stock": 25,
+            "rating": 4.5,
+            "details": {
+                "height": "20 cm",
+                "material": "PVC",
+                "manufacturer": "Star Wars Collectibles",
+                "weight": "0.5 kg"
+            },
+            "tags": [
+                "figura",
+                "Luke",
+                "Star Wars",
+                "coleccionable"
+            ],
+            "variants": [
+                {
+                    "variantId": "prod1-v1",
+                    "color": "Original",
+                    "price": 79.99,
+                    "stock": 15
+                },
+                {
+                    "variantId": "prod1-v2",
+                    "color": "Limited Edition",
+                    "price": 99.99,
+                    "stock": 10
+                }
+            ],
+            "subcategoryId": "personajes"
+        },
+        {
+            "id": "prod2",
+            "name": "Leia Organa",
+            "price": 79.99,
+            "currency": "USD",
+            "description": "Figura de acción de Leia Organa con detalle en vestuario y accesorios característicos.",
+            "image": "assets/images/leia.webp",
+            "stock": 30,
+            "rating": 4.7,
+            "details": {
+                "height": "20 cm",
+                "material": "PVC",
+                "manufacturer": "Star Wars Collectibles",
+                "weight": "0.45 kg"
+            },
+            "tags": [
+                "figura",
+                "Leia",
+                "Star Wars",
+                "coleccionable"
+            ],
+            "variants": [
+                {
+                    "variantId": "prod2-v1",
+                    "color": "Edición Clásica",
+                    "price": 79.99,
+                    "stock": 20
+                },
+                {
+                    "variantId": "prod2-v2",
+                    "color": "Edición Fan",
+                    "price": 89.99,
+                    "stock": 10
+                }
+            ],
+            "subcategoryId": "personajes"
+        },
+        {
+            "id": "prod3",
+            "name": "Darth Vader",
+            "price": 99.99,
+            "currency": "USD",
+            "description": "Figura imponente de Darth Vader con capa, máscara articulada y espada de luz.",
+            "image": "assets/images/darkVaider.jpg",
+            "stock": 20,
+            "rating": 4.8,
+            "details": {
+                "height": "22 cm",
+                "material": "PVC",
+                "manufacturer": "Imperial Toys",
+                "weight": "0.55 kg"
+            },
+            "tags": [
+                "figura",
+                "Vader",
+                "villano",
+                "Star Wars"
+            ],
+            "variants": [
+                {
+                    "variantId": "prod3-v1",
+                    "color": "Negro clásico",
+                    "price": 99.99,
+                    "stock": 12
+                },
+                {
+                    "variantId": "prod3-v2",
+                    "color": "Edición Especial",
+                    "price": 119.99,
+                    "stock": 8
+                }
+            ],
+            "subcategoryId": "villanos"
+        },
+        {
+            "id": "prod4",
+            "name": "Kylo Ren",
+            "price": 89.99,
+            "currency": "USD",
+            "description": "Figura de acción de Kylo Ren con detalles en su casco y capa, confeccionada con gran realismo.",
+            "image": "assets/images/kylo_ren.png",
+            "stock": 15,
+            "rating": 4.3,
+            "details": {
+                "height": "20 cm",
+                "material": "PVC",
+                "manufacturer": "Imperial Toys",
+                "weight": "0.5 kg"
+            },
+            "tags": [
+                "figura",
+                "Kylo",
+                "villano",
+                "Star Wars"
+            ],
+            "variants": [
+                {
+                    "variantId": "prod4-v1",
+                    "color": "Estándar",
+                    "price": 89.99,
+                    "stock": 10
+                },
+                {
+                    "variantId": "prod4-v2",
+                    "color": "Glow Edition",
+                    "price": 99.99,
+                    "stock": 5
+                }
+            ],
+            "subcategoryId": "villanos"
+        },
+        {
+            "id": "prod5",
+            "name": "Sable de Luz de Luke Skywalker",
+            "price": 199.99,
+            "currency": "USD",
+            "description": "Réplica de sable de luz inspirada en el de Luke Skywalker, ideal para exhibición o coleccionismo.",
+            "image": "assets/images/sable_luke.png",
+            "stock": 10,
+            "rating": 4.6,
+            "details": {
+                "length": "90 cm",
+                "material": "Metal y plástico",
+                "manufacturer": "Galactic Replicas",
+                "weight": "0.8 kg"
+            },
+            "tags": [
+                "sable",
+                "Luke",
+                "Star Wars",
+                "réplica"
+            ],
+            "variants": [
+                {
+                    "variantId": "prod5-v1",
+                    "color": "Verde",
+                    "price": 199.99,
+                    "stock": 7
+                },
+                {
+                    "variantId": "prod5-v2",
+                    "color": "Dorado",
+                    "price": 219.99,
+                    "stock": 3
+                }
+            ],
+            "subcategoryId": "sables-luz"
+        },
+        {
+            "id": "prod6",
+            "name": "Sable de Luz de Darth Vader",
+            "price": 209.99,
+            "currency": "USD",
+            "description": "Réplica de sable de luz rojo, emblemática en la figura de Darth Vader.",
+            "image": "assets/images/sable_vader.png",
+            "stock": 8,
+            "rating": 4.7,
+            "details": {
+                "length": "90 cm",
+                "material": "Metal reforzado y plástico",
+                "manufacturer": "Galactic Replicas",
+                "weight": "0.85 kg"
+            },
+            "tags": [
+                "sable",
+                "Vader",
+                "Star Wars",
+                "réplica"
+            ],
+            "variants": [
+                {
+                    "variantId": "prod6-v1",
+                    "color": "Rojo",
+                    "price": 209.99,
+                    "stock": 8
+                }
+            ],
+            "subcategoryId": "sables-oscuridad"
+        },
+        {
+            "id": "prod7",
+            "name": "Poster de Batalla Espacial",
+            "price": 29.99,
+            "currency": "USD",
+            "description": "Poster de alta calidad con impresión de una épica batalla espacial en el universo Star Wars.",
+            "image": "assets/images/poster_batalla.png",
+            "stock": 50,
+            "rating": 4.2,
+            "details": {
+                "dimensions": "60x90 cm",
+                "material": "Papel fotográfico",
+                "manufacturer": "Star Art",
+                "weight": "0.3 kg"
+            },
+            "tags": [
+                "poster",
+                "arte",
+                "Star Wars",
+                "coleccionable"
+            ],
+            "variants": [],
+            "subcategoryId": "posters"
+        },
+        {
+            "id": "prod8",
+            "name": "Poster de Iconos Star Wars",
+            "price": 24.99,
+            "currency": "USD",
+            "description": "Vibrante collage con los personajes más icónicos de la saga.",
+            "image": "assets/images/poster_iconos.png",
+            "stock": 70,
+            "rating": 4.4,
+            "details": {
+                "dimensions": "50x70 cm",
+                "material": "Papel de alta calidad",
+                "manufacturer": "Star Art",
+                "weight": "0.25 kg"
+            },
+            "tags": [
+                "poster",
+                "Star Wars",
+                "arte"
+            ],
+            "variants": [],
+            "subcategoryId": "posters"
+        },
+        {
+            "id": "prod9",
+            "name": "Taza de Star Wars",
+            "price": 14.99,
+            "currency": "USD",
+            "description": "Taza temática con diseños icónicos de Star Wars para los fans más apasionados.",
+            "image": "assets/images/taza.png",
+            "stock": 100,
+            "rating": 4.0,
+            "details": {
+                "capacity": "350 ml",
+                "material": "Cerámica",
+                "manufacturer": "Galactic Mugs",
+                "weight": "0.4 kg"
+            },
+            "tags": [
+                "taza",
+                "Star Wars",
+                "accesorio"
+            ],
+            "variants": [
+                {
+                    "variantId": "prod9-v1",
+                    "color": "Blanco",
+                    "price": 14.99,
+                    "stock": 70
+                },
+                {
+                    "variantId": "prod9-v2",
+                    "color": "Negro",
+                    "price": 15.99,
+                    "stock": 30
+                }
+            ],
+            "subcategoryId": "accesorios-varios"
+        },
+        {
+            "id": "prod10",
+            "name": "Llavero Imperial",
+            "price": 9.99,
+            "currency": "USD",
+            "description": "Llavero con el emblema del Imperio. Un accesorio pequeño pero lleno de identidad.",
+            "image": "assets/images/llavero.png",
+            "stock": 150,
+            "rating": 4.3,
+            "details": {
+                "material": "Metal y plástico",
+                "manufacturer": "Imperial Accessories"
+            },
+            "tags": [
+                "llavero",
+                "Star Wars",
+                "accesorio"
+            ],
+            "variants": [],
+            "subcategoryId": "accesorios-varios"
+        },
+        {
+            "id": "prod11",
+            "name": "Modelo X-Wing",
+            "price": 299.99,
+            "currency": "USD",
+            "description": "Modelo a escala del icónico caza estelar X-Wing con detalles precisos y partes móviles.",
+            "image": "assets/images/xwing.png",
+            "stock": 5,
+            "rating": 4.8,
+            "details": {
+                "scale": "1:72",
+                "material": "Plástico de alta calidad",
+                "manufacturer": "Starship Models",
+                "weight": "2 kg"
+            },
+            "tags": [
+                "modelo",
+                "X-Wing",
+                "Star Wars",
+                "coleccionable"
+            ],
+            "variants": [],
+            "subcategoryId": "cazas-estelares"
+        },
+        {
+            "id": "prod12",
+            "name": "Modelo Destructor Estelar",
+            "price": 499.99,
+            "currency": "USD",
+            "description": "Magnífico modelo a escala del Destructor Estelar con múltiples detalles, ideal para los coleccionistas.",
+            "image": "assets/images/destructor.png",
+            "stock": 3,
+            "rating": 4.9,
+            "details": {
+                "scale": "1:144",
+                "material": "Plástico y metal",
+                "manufacturer": "Starship Models",
+                "weight": "3.5 kg"
+            },
+            "tags": [
+                "modelo",
+                "Destructor Estelar",
+                "Star Wars",
+                "coleccionable"
+            ],
+            "variants": [],
+            "subcategoryId": "naves-imperiales"
+        },
+        {
+            "id": "prod13",
+            "name": "Halcón Milenario",
+            "price": 599.99,
+            "currency": "USD",
+            "description": "Modelo a escala detallado del legendario Halcón Milenario con interior iluminado y sonidos originales.",
+            "image": "assets/images/halcon_milenario.png",
+            "stock": 8,
+            "rating": 4.9,
+            "details": {
+                "scale": "1:100",
+                "material": "Plástico de alta resistencia y componentes metálicos",
+                "manufacturer": "Starship Models",
+                "weight": "4.2 kg"
+            },
+            "tags": [
+                "modelo",
+                "Halcón Milenario",
+                "Star Wars",
+                "coleccionable",
+                "premium"
+            ],
+            "variants": [
+                {
+                    "variantId": "prod13-v1",
+                    "color": "Estándar",
+                    "price": 599.99,
+                    "stock": 5
+                },
+                {
+                    "variantId": "prod13-v2",
+                    "color": "Edición Coleccionista",
+                    "price": 799.99,
+                    "stock": 3
+                }
+            ],
+            "subcategoryId": "naves-imperiales"
+        },
+        {
+            "id": "prod14",
+            "name": "Casco Stormtrooper",
+            "price": 149.99,
+            "currency": "USD",
+            "description": "Réplica de casco de Stormtrooper con acabados de alta calidad y detalles precisos.",
+            "image": "assets/images/casco_stormtrooper.png",
+            "stock": 20,
+            "rating": 4.6,
+            "details": {
+                "size": "Escala 1:1",
+                "material": "Plástico ABS",
+                "manufacturer": "Imperial Replicas",
+                "weight": "1.2 kg"
+            },
+            "tags": [
+                "casco",
+                "Stormtrooper",
+                "Star Wars",
+                "réplica",
+                "Imperio"
+            ],
+            "variants": [],
+            "subcategoryId": "accesorios-varios"
+        },
+        {
+            "id": "prod15",
+            "name": "Baby Yoda (Grogu)",
+            "price": 69.99,
+            "currency": "USD",
+            "description": "Figura de Baby Yoda (Grogu) de 'The Mandalorian' con detalles realistas y accesorios.",
+            "image": "assets/images/baby_yoda.png",
+            "stock": 50,
+            "rating": 4.8,
+            "details": {
+                "height": "15 cm",
+                "material": "PVC",
+                "manufacturer": "Star Wars Collectibles",
+                "weight": "0.3 kg"
+            },
+            "tags": [
+                "figura",
+                "Grogu",
+                "Baby Yoda",
+                "Mandalorian",
+                "Star Wars"
+            ],
+            "variants": [
+                {
+                    "variantId": "prod15-v1",
+                    "color": "Estándar",
+                    "price": 69.99,
+                    "stock": 30
+                },
+                {
+                    "variantId": "prod15-v2",
+                    "color": "Con cuna flotante",
+                    "price": 89.99,
+                    "stock": 20
+                }
+            ],
+            "subcategoryId": "personajes"
+        },
+        {
+            "id": "prod16",
+            "name": "Sable de Luz de Rey",
+            "price": 189.99,
+            "currency": "USD",
+            "description": "Réplica del sable de luz de Rey con efectos luminosos y sonidos auténticos.",
+            "image": "assets/images/sable_rey.png",
+            "stock": 15,
+            "rating": 4.7,
+            "details": {
+                "length": "87 cm",
+                "material": "Aluminio y plástico",
+                "manufacturer": "Galactic Replicas",
+                "weight": "0.75 kg"
+            },
+            "tags": [
+                "sable",
+                "Rey",
+                "Star Wars",
+                "réplica"
+            ],
+            "variants": [],
+            "subcategoryId": "sables-luz"
+        },
+        {
+            "id": "prod17",
+            "name": "LEGO AT-AT",
+            "price": 349.99,
+            "currency": "USD",
+            "description": "Set LEGO de construcción del icónico vehículo AT-AT con más de 1800 piezas y minifiguras.",
+            "image": "assets/images/lego_atat.png",
+            "stock": 12,
+            "rating": 4.8,
+            "details": {
+                "pieces": "1871",
+                "size": "38 cm altura, 45 cm longitud",
+                "manufacturer": "LEGO",
+                "weight": "2.5 kg"
+            },
+            "tags": [
+                "LEGO",
+                "AT-AT",
+                "Star Wars",
+                "construcción",
+                "vehículo"
+            ],
+            "variants": [],
+            "subcategoryId": "naves-imperiales"
+        },
+        {
+            "id": "prod18",
+            "name": "Casco de Boba Fett",
+            "price": 199.99,
+            "currency": "USD",
+            "description": "Réplica premium del casco de Boba Fett con detalles desgastados y visor funcional.",
+            "image": "assets/images/casco_boba.png",
+            "stock": 15,
+            "rating": 4.9,
+            "details": {
+                "size": "Escala 1:1",
+                "material": "Plástico reforzado y metal",
+                "manufacturer": "Mandalorian Armory",
+                "weight": "1.4 kg"
+            },
+            "tags": [
+                "casco",
+                "Boba Fett",
+                "Star Wars",
+                "réplica",
+                "cazarrecompensas"
+            ],
+            "variants": [],
+            "subcategoryId": "accesorios-varios"
+        },
+        {
+            "id": "prod19",
+            "name": "The Mandalorian Din Djarin",
+            "price": 109.99,
+            "currency": "USD",
+            "description": "Figura articulada del Mandaloriano con armadura beskar, capa y arsenal completo de armas.",
+            "image": "assets/images/mando.png",
+            "stock": 22,
+            "rating": 4.8,
+            "details": {
+                "height": "25 cm",
+                "material": "PVC y metal",
+                "manufacturer": "Star Wars Collectibles",
+                "weight": "0.6 kg"
+            },
+            "tags": [
+                "figura",
+                "Mandalorian",
+                "Din Djarin",
+                "Star Wars",
+                "coleccionable"
+            ],
+            "variants": [
+                {
+                    "variantId": "prod19-v1",
+                    "color": "Armadura Básica",
+                    "price": 109.99,
+                    "stock": 12
+                },
+                {
+                    "variantId": "prod19-v2",
+                    "color": "Armadura Beskar Completa",
+                    "price": 129.99,
+                    "stock": 10
+                }
+            ],
+            "subcategoryId": "personajes"
+        },
+        {
+            "id": "prod20",
+            "name": "TIE Fighter",
+            "price": 249.99,
+            "currency": "USD",
+            "description": "Modelo detallado del clásico caza TIE Fighter con cabina iluminada y efectos de sonido.",
+            "image": "assets/images/tie_fighter.png",
+            "stock": 10,
+            "rating": 4.7,
+            "details": {
+                "scale": "1:72",
+                "material": "Plástico y componentes electrónicos",
+                "manufacturer": "Imperial Fleet Models",
+                "weight": "1.8 kg"
+            },
+            "tags": [
+                "modelo",
+                "TIE Fighter",
+                "Star Wars",
+                "nave",
+                "Imperio"
+            ],
+            "variants": [],
+            "subcategoryId": "cazas-estelares"
+        },
+        {
+            "id": "prod21",
+            "name": "Puzzle Star Wars Panorámico",
+            "price": 34.99,
+            "currency": "USD",
+            "description": "Puzzle panorámico de 1000 piezas que recrea una escena épica de toda la saga Star Wars.",
+            "image": "assets/images/puzzle_sw.png",
+            "stock": 40,
+            "rating": 4.5,
+            "details": {
+                "pieces": "1000",
+                "dimensions": "98 x 38 cm (completado)",
+                "manufacturer": "Galaxy Puzzles",
+                "weight": "0.9 kg"
+            },
+            "tags": [
+                "puzzle",
+                "Star Wars",
+                "panorámico",
+                "juego"
+            ],
+            "variants": [],
+            "subcategoryId": "accesorios-varios"
+        },
+        {
+            "id": "prod22",
+            "name": "Sable de Luz de Kylo Ren",
+            "price": 219.99,
+            "currency": "USD",
+            "description": "Réplica del inestable sable de luz de Kylo Ren con efecto de hoja irregular y empuñadura cruciforme.",
+            "image": "assets/images/sable_kylo.png",
+            "stock": 12,
+            "rating": 4.6,
+            "details": {
+                "length": "92 cm",
+                "material": "Aluminio y acrílico",
+                "manufacturer": "Dark Side Replicas",
+                "weight": "0.9 kg"
+            },
+            "tags": [
+                "sable",
+                "Kylo Ren",
+                "Star Wars",
+                "réplica",
+                "inestable"
+            ],
+            "variants": [],
+            "subcategoryId": "sables-oscuridad"
+        },
+        {
+            "id": "prod23",
+            "name": "Ahsoka Tano",
+            "price": 89.99,
+            "currency": "USD",
+            "description": "Figura de acción de Ahsoka Tano con sus emblemáticos sables de luz duales en posición de combate.",
+            "image": "assets/images/ahsoka.png",
+            "stock": 18,
+            "rating": 4.8,
+            "details": {
+                "height": "22 cm",
+                "material": "PVC de alta calidad",
+                "manufacturer": "Star Wars Collectibles",
+                "weight": "0.45 kg"
+            },
+            "tags": [
+                "figura",
+                "Ahsoka",
+                "Star Wars",
+                "Jedi",
+                "coleccionable"
+            ],
+            "variants": [
+                {
+                    "variantId": "prod23-v1",
+                    "color": "Versión Clone Wars",
+                    "price": 89.99,
+                    "stock": 10
+                },
+                {
+                    "variantId": "prod23-v2",
+                    "color": "Versión Mandalorian",
+                    "price": 99.99,
+                    "stock": 8
+                }
+            ],
+            "subcategoryId": "personajes"
+        },
+        {
+            "id": "prod24",
+            "name": "Chaqueta Piloto X-Wing",
+            "price": 149.99,
+            "currency": "USD",
+            "description": "Réplica de la chaqueta naranja de piloto de X-Wing con emblemas de la Alianza Rebelde.",
+            "image": "assets/images/chaqueta_piloto.png",
+            "stock": 25,
+            "rating": 4.7,
+            "details": {
+                "material": "Poliuretano y nylon",
+                "manufacturer": "Rebel Outfitters",
+                "weight": "1.2 kg"
+            },
+            "tags": [
+                "ropa",
+                "piloto",
+                "Star Wars",
+                "cosplay",
+                "Rebelión"
+            ],
+            "variants": [
+                {
+                    "variantId": "prod24-v1",
+                    "color": "Naranja",
+                    "size": "S",
+                    "price": 149.99,
+                    "stock": 5
+                },
+                {
+                    "variantId": "prod24-v2",
+                    "color": "Naranja",
+                    "size": "M",
+                    "price": 149.99,
+                    "stock": 8
+                },
+                {
+                    "variantId": "prod24-v3",
+                    "color": "Naranja",
+                    "size": "L",
+                    "price": 149.99,
+                    "stock": 8
+                },
+                {
+                    "variantId": "prod24-v4",
+                    "color": "Naranja",
+                    "size": "XL",
+                    "price": 149.99,
+                    "stock": 4
+                }
+            ],
+            "subcategoryId": "accesorios-varios"
+        }
+    ]
+}

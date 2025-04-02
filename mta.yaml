@@ -1,0 +1,93 @@
+_schema-version: "3.2"
+ID: starWarsShop
+version: 0.0.1
+modules:
+- name: starWarsShop-destination-content
+  type: com.sap.application.content
+  requires:
+  - name: starWarsShop-destination-service
+    parameters:
+      content-target: true
+  - name: starWarsShop_html_repo_host
+    parameters:
+      service-key:
+        name: starWarsShop_html_repo_host-key
+  - name: uaa_starWarsShop
+    parameters:
+      service-key:
+        name: uaa_starWarsShop-key
+  parameters:
+    content:
+      instance:
+        destinations:
+        - Name: starwarsmanaged_starWarsShop_html_repo_host
+          ServiceInstanceName: starWarsShop-html5-app-host-service
+          ServiceKeyName: starWarsShop_html_repo_host-key
+          sap.cloud.service: starwarsmanaged
+        - Authentication: OAuth2UserTokenExchange
+          Name: starwarsmanaged_uaa_starWarsShop
+          ServiceInstanceName: starWarsShop-xsuaa-service
+          ServiceKeyName: uaa_starWarsShop-key
+          sap.cloud.service: starwarsmanaged
+        existing_destinations_policy: ignore
+  build-parameters:
+    no-source: true
+- name: starWarsShop-app-content
+  type: com.sap.application.content
+  path: .
+  requires:
+  - name: starWarsShop_html_repo_host
+    parameters:
+      content-target: true
+  build-parameters:
+    build-result: resources
+    requires:
+    - artifacts:
+      - eshop.zip
+      name: eshop
+      target-path: resources/
+- name: eshop
+  type: html5
+  path: eshop
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+resources:
+- name: starWarsShop-destination-service
+  type: org.cloudfoundry.managed-service
+  parameters:
+    config:
+      HTML5Runtime_enabled: true
+      init_data:
+        instance:
+          destinations:
+          - Authentication: NoAuthentication
+            Name: ui5
+            ProxyType: Internet
+            Type: HTTP
+            URL: https://ui5.sap.com
+          existing_destinations_policy: update
+      version: 1.0.0
+    service: destination
+    service-name: starWarsShop-destination-service
+    service-plan: lite
+- name: starWarsShop_html_repo_host
+  type: org.cloudfoundry.managed-service
+  parameters:
+    service: html5-apps-repo
+    service-name: starWarsShop-html5-app-host-service
+    service-plan: app-host
+- name: uaa_starWarsShop
+  type: org.cloudfoundry.managed-service
+  parameters:
+    path: ./xs-security.json
+    service: xsuaa
+    service-name: starWarsShop-xsuaa-service
+    service-plan: application
+parameters:
+  deploy_mode: html5-repo
+  enable-parallel-deployments: true

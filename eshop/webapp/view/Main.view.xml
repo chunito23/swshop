@@ -1,0 +1,12 @@
+<mvc:View
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    controllerName="eshop.controller.Main"
+>
+    <Page
+        id="page"
+        title="Tienda"
+    >
+
+    </Page>
+</mvc:View>

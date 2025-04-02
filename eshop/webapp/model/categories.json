@@ -1,0 +1,36 @@
+{
+    "categories": [
+        {
+            "id": "figuras",
+            "name": "Figuras de Acción",
+            "subCategories": [
+                "personajes",
+                "villanos"
+            ]
+        },
+        {
+            "id": "sables",
+            "name": "Réplicas de Sables de Luz",
+            "subCategories": [
+                "sables-luz",
+                "sables-oscuridad"
+            ]
+        },
+        {
+            "id": "accesorios",
+            "name": "Accesorios y Merchandising",
+            "subCategories": [
+                "posters",
+                "accesorios-varios"
+            ]
+        },
+        {
+            "id": "naves",
+            "name": "Naves y Modelos",
+            "subCategories": [
+                "cazas-estelares",
+                "naves-imperiales"
+            ]
+        }
+    ]
+}

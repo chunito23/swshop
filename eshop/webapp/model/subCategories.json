@@ -1,0 +1,44 @@
+{
+    "subCategories": [
+        {
+            "id": "personajes",
+            "name": "Personajes",
+            "categoryId": "figuras"
+        },
+        {
+            "id": "villanos",
+            "name": "Villanos",
+            "categoryId": "figuras"
+        },
+        {
+            "id": "sables-luz",
+            "name": "Sables de Luz",
+            "categoryId": "sables"
+        },
+        {
+            "id": "sables-oscuridad",
+            "name": "Sables de Oscuridad",
+            "categoryId": "sables"
+        },
+        {
+            "id": "posters",
+            "name": "Posters",
+            "categoryId": "accesorios"
+        },
+        {
+            "id": "accesorios-varios",
+            "name": "Accesorios Varios",
+            "categoryId": "accesorios"
+        },
+        {
+            "id": "cazas-estelares",
+            "name": "Cazas Estelares",
+            "categoryId": "naves"
+        },
+        {
+            "id": "naves-imperiales",
+            "name": "Naves Imperiales",
+            "categoryId": "naves"
+        }
+    ]
+}

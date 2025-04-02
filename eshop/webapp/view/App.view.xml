@@ -1,0 +1,77 @@
+<mvc:View
+    controllerName="eshop.controller.App"
+    displayBlock="true"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+>
+    <!-- Toolbar con 3 Secciones (Izquierda, Centro, Derecha) -->
+    <Toolbar
+        id="toolbar"
+        height="140px"
+        width="100%"
+    >
+        <!-- Sección Izquierda -->
+        <FlexBox wrap="Wrap" width="100%" height="100%" alignItems="Center" justifyContent="SpaceAround"> 
+            <VBox
+                class="sapUiVisibleOnlyOnDesktop"
+                alignItems="Center"
+                justifyContent="Center"
+            >
+                <Image
+                    src="../assets/images/starwarslogo.png"
+                    width="10rem"
+                    height="4rem"
+                />
+                <Image
+                    src="../assets/images/sable.webp"
+                    width="10rem"
+                    height="4rem"
+                />
+            </VBox>
+
+            <!-- Espacio flexible para separar -->
+            <ToolbarSpacer />
+
+            <!-- Sección Central -->
+            <VBox
+                alignItems="Center"
+                justifyContent="Center"
+            >
+                <SearchField placeholder="Buscar producto..." />
+                <HBox wrap="Wrap" id="HboxMenus">
+                </HBox>
+            </VBox>
+
+            <ToolbarSpacer />
+
+            <!-- Sección Derecha -->
+            <VBox
+                alignItems="Center"
+                justifyContent="Center"
+            >
+                <Image
+                    class="sapUiVisibleOnlyOnDesktop"
+                    src="../assets/images/sablederecha.jpg"
+                    width="10rem"
+                    height="4rem"
+                />
+                <HBox>
+                    <Button
+                        icon="sap-icon://cart"
+                        press=".onOpenPanel"
+                    />
+                    <Button
+                        icon="sap-icon://customer"
+                        press=".onOpenPanel"
+                    />
+                    <Button
+                        icon="sap-icon://home"
+                        press=".onOpenPanel"
+                    />
+                </HBox>
+            </VBox>
+        </FlexBox>
+    </Toolbar>
+
+    <App id="app" />
+</mvc:View>
