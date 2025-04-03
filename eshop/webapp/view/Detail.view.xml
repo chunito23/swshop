@@ -2,48 +2,112 @@
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m"
     controllerName="eshop.controller.Detail"
-    displayBlock="true">
-
-    <Page title="{products>/selectedProduct/name}" showNavButton="true" navButtonPress="onNavBack">
+    displayBlock="true"
+>
+    <Page
+        title="{products>/selectedProduct/name}"
+        showNavButton="true"
+        navButtonPress="onNavBack"
+    >
         <content>
-            <HBox class="sapUiSmallMargin" justifyContent="SpaceBetween">
+            <HBox
+                class="sapUiSmallMargin"
+                justifyContent="SpaceBetween"
+            >
                 <!-- Imagen del Producto -->
-                <VBox class="sapUiSmallMarginEnd" width="40%">
-                    <Image src="{products>/selectedProduct/image}" width="100%" class="sapUiMediumMarginBottom"/>
+                <VBox
+                    class="sapUiSmallMarginEnd"
+                    width="40%"
+                >
+                    <Image
+                        src="{products>/selectedProduct/image}"
+                        width="100%"
+                        class="sapUiMediumMarginBottom"
+                    />
                 </VBox>
-                
+
                 <!-- Detalles del Producto -->
-                <VBox width="55%" class="sapUiSmallMargin">
-                    <Text text="Figura coleccionable" class="sapUiSmallMarginBottom"/>
-                    <Title text="{products>/selectedProduct/name}" level="H1"/>
-                    <RatingIndicator value="{products>/selectedProduct/rating}" maxValue="5" iconSize="1.5rem"/>
-                    
-                    <Text text="{products>/selectedProduct/price} {products>/selectedProduct/currency}" class="sapUiSmallMarginTop" />
-                    <Text text="Stock: {products>/selectedProduct/stock}" class="sapUiSmallMarginTop"/>
-                    
+                <VBox
+                    width="55%"
+                    class="sapUiSmallMargin"
+                >
+                    <Text
+                        text="Figura coleccionable"
+                        class="sapUiSmallMarginBottom"
+                    />
+                    <Title
+                        text="{products>/selectedProduct/name}"
+                        level="H1"
+                    />
+                    <RatingIndicator
+                        value="{products>/selectedProduct/rating}"
+                        maxValue="5"
+                        iconSize="1.5rem"
+                    />
+
+                    <Text
+                        text="{products>/selectedProduct/price} {products>/selectedProduct/currency}"
+                        class="sapUiSmallMarginTop"
+                    />
+                    <Text
+                        text="Stock: {products>/selectedProduct/stock}"
+                        class="sapUiSmallMarginTop"
+                    />
+
                     <!-- Descripción -->
-                    <Text text="{products>/selectedProduct/description}" class="sapUiMediumMarginTop"/>
-                    
+                    <Text
+                        text="{products>/selectedProduct/description}"
+                        class="sapUiMediumMarginTop"
+                    />
+
                     <!-- Detalles Técnicos -->
-                    <Text text="Detalles del producto" class="sapUiMediumMarginTop sapUiBold"/>
+                    <Text
+                        text="Detalles del producto"
+                        class="sapUiMediumMarginTop sapUiBold"
+                    />
                     <List>
-                        <StandardListItem title="Altura: {products>/selectedProduct/details/height}"/>
-                        <StandardListItem title="Material: {products>/selectedProduct/details/material}"/>
-                        <StandardListItem title="Fabricante: {products>/selectedProduct/details/manufacturer}"/>
-                        <StandardListItem title="Peso: {products>/selectedProduct/details/weight}"/>
+                        <StandardListItem
+                            title="Altura: {products>/selectedProduct/details/height}"
+                        />
+                        <StandardListItem
+                            title="Material: {products>/selectedProduct/details/material}"
+                        />
+                        <StandardListItem
+                            title="Fabricante: {products>/selectedProduct/details/manufacturer}"
+                        />
+                        <StandardListItem
+                            title="Peso: {products>/selectedProduct/details/weight}"
+                        />
                     </List>
-                    
+
                     <!-- Variantes -->
-                    <Text text="Variantes:" class="sapUiSmallMarginTop"/>
-                    <HBox>
-                        <Button text="{products>/selectedProduct/variants/0/color}" type="Transparent" press="onSelectVariant"/>
-                        <Button text="{products>/selectedProduct/variants/1/color}" type="Transparent" press="onSelectVariant"/>
+                    <Text
+                        text="Variantes:"
+                        class="sapUiSmallMarginTop"
+                    />
+                    <HBox items="{products>/selectedProduct/variants}">
+                        <Button
+                            text="{products>color}"
+                            type="Transparent"
+                            press="onSelectVariant"
+                        />
                     </HBox>
-                    
+
                     <!-- Botones de compra -->
-                    <HBox justifyContent="SpaceBetween" class="sapUiMediumMarginTop">
-                        <Button text="Comprar ahora" type="Emphasized" press="onBuyNow"/>
-                        <Button text="Agregar al carrito" type="Default" press="onAddToCart"/>
+                    <HBox
+                        justifyContent="SpaceBetween"
+                        class="sapUiMediumMarginTop"
+                    >
+                        <Button
+                            text="Comprar ahora"
+                            type="Emphasized"
+                            press=".onBuyNow"
+                        />
+                        <Button
+                            text="Agregar al carrito"
+                            type="Default"
+                            press=".onAddToCart"
+                        />
                     </HBox>
                 </VBox>
             </HBox>

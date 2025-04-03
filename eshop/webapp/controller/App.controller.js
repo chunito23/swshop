@@ -1,16 +1,7 @@
 sap.ui.define([
   "./BaseController",
-  "sap/m/MessageToast",
-  "sap/m/List",
-  "sap/m/StandardListItem",
-  "sap/m/ScrollContainer",
-  "sap/m/Button",
-  "sap/m/Popover",
-  "sap/m/library",
-  "sap/m/HBox",
-  "sap/m/Image",
-  "sap/m/Text"
-], function (BaseController, MessageToast, List, StandardListItem, ScrollContainer, Button, Popover, mLibrary, HBox, Image, Text) {
+  "sap/m/MessageToast"
+], function (BaseController, MessageToast) {
   "use strict";
 
   return BaseController.extend("eshop.controller.App", {
@@ -42,46 +33,73 @@ sap.ui.define([
 
     onOpenPanel: function (oEvent) {
       let oCartModel = this.getOwnerComponent().getModel("cart");
-      let aCartItems = oCartModel.getProperty("/items");
-
-      let oList = new List("cartList", {
-        items: aCartItems.map(item => new StandardListItem({
-          title: item.name,
-          info: item.price + " USD",
-          icon: item.image
-        }))
-      });
-
-      let oScrollContainer = new ScrollContainer("scrollCart", {
-        width: "100%",
-        height: "300px",
-        vertical: true,
-        content: [oList]
-      });
-
-      let oCheckoutButton = new Button({
-        text: "Finalizar Compra",
-        type: "Emphasized",
-        press: function () {
-          MessageToast.show("Compra Finalizada");
-        }
-      });
-
-      if (!this._oPopover) {
-        this._oPopover = new Popover({
-          placement: mLibrary.PlacementType.Left,
-          showHeader: true,
-          title: "Carrito de Compras",
-          contentWidth: "300px",
-          content: [oScrollContainer, oCheckoutButton]
-        });
-      } else {
-        this._oPopover.removeAllContent();
-        this._oPopover.addContent(oScrollContainer);
-        this._oPopover.addContent(oCheckoutButton);
+      let aCartItems = oCartModel.getProperty("/items"); // 🔹 Obtiene los productos del carrito
+      let total = oCartModel.getProperty("/total");
+  
+      // Verifica si el carrito está vacío
+      if (!aCartItems || aCartItems.length === 0) {
+          MessageToast.show("El carrito está vacío.");
+          return;
       }
+  
+      // 🔹 Crea una lista de productos
+      let oList = new sap.m.List({
+          items: {
+              path: "/items",
+              template: new sap.m.StandardListItem({
+                  title: "{name}",
+                  description: "{price} {currency}",
+                  icon: "{image}",
+                  info: "{= ${quantity} + 'x'}",
+                  type: "Inactive"
+              })
+          }
+      });
+  
+      // 🔹 Asigna el modelo al List
+      oList.setModel(oCartModel);
+  
+      // 🔹 Crea el ScrollContainer con la lista dentro
+      let oScrollContainer = new sap.m.ScrollContainer({
+          width: "100%",
+          height: "300px",
+          vertical: true,
+          content: [oList]
+      });
+  
+      // 🔹 Botón de Checkout
+      let oCheckoutButton = new sap.m.Button({
+          text: "Finalizar Compra",
+          type: "Emphasized",
+          press: function () {
+              MessageToast.show("Compra Finalizada");
+          }
+      });
 
+      let totalText = new sap.m.Text({
+        text: "total" + total
+      })
+
+  
+      // 🔹 Verifica si ya existe el Popover
+      if (!this._oPopover) {
+          this._oPopover = new sap.m.Popover({
+              placement: sap.m.PlacementType.Left,
+              showHeader: true,
+              title: "Carrito de Compras",
+              contentWidth: "300px",
+              content: [oScrollContainer, totalText, oCheckoutButton]
+          });
+      } else {
+          this._oPopover.removeAllContent();
+          this._oPopover.addContent(oScrollContainer);
+          this._oPopover.addContent(totalText);
+          this._oPopover.addContent(oCheckoutButton); 
+      }
+  
+      // 🔹 Abre el Popover en el botón presionado
       this._oPopover.openBy(oEvent.getSource());
-    }
+  }
+  
   });
 });
