@@ -2,55 +2,51 @@
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m"
     controllerName="eshop.controller.Detail"
->
-    <Page
-        title="Detalles del Producto"
-        showNavButton="true"
-        navButtonPress=".onNavBack"
-    >
+    displayBlock="true">
+
+    <Page title="{products>/selectedProduct/name}" showNavButton="true" navButtonPress="onNavBack">
         <content>
-            <!-- Slider de imágenes -->
-            <FlexBox
-                class="sapUiSmallMargin"
-                wrap="Wrap"
-            >
-                <Carousel
-                    id="imageCarousel"
-                    height="250px"
-                />
-
-                <VBox
-                    width="200px"
-                    class="sapUiSmallMargin"
-                    alignItems="Start"
-                    justifyContent="SpaceBetween"
-                >
-                    <Title
-                        id="productName"
-                        level="H1"
-                    />
-
-                    <Text
-                        id="productDescription"
-                        wrapping="true"
-                    />
-                    <HBox>
-                        <ObjectNumber
-                            class="sapUiSmallMarginEnd"
-                            id="productPrice"
-                            state="Success"
-                        />
-                        <ObjectStatus id="productStock" />
-                    </HBox>
-
-                    <Button
-                        id="addToCartButton"
-                        text="Añadir al carrito"
-                        type="Emphasized"
-                        press=".onAddToCartPress"
-                    />
+            <HBox class="sapUiSmallMargin" justifyContent="SpaceBetween">
+                <!-- Imagen del Producto -->
+                <VBox class="sapUiSmallMarginEnd" width="40%">
+                    <Image src="{products>/selectedProduct/image}" width="100%" class="sapUiMediumMarginBottom"/>
                 </VBox>
-            </FlexBox>
+                
+                <!-- Detalles del Producto -->
+                <VBox width="55%" class="sapUiSmallMargin">
+                    <Text text="Figura coleccionable" class="sapUiSmallMarginBottom"/>
+                    <Title text="{products>/selectedProduct/name}" level="H1"/>
+                    <RatingIndicator value="{products>/selectedProduct/rating}" maxValue="5" iconSize="1.5rem"/>
+                    
+                    <Text text="{products>/selectedProduct/price} {products>/selectedProduct/currency}" class="sapUiSmallMarginTop" />
+                    <Text text="Stock: {products>/selectedProduct/stock}" class="sapUiSmallMarginTop"/>
+                    
+                    <!-- Descripción -->
+                    <Text text="{products>/selectedProduct/description}" class="sapUiMediumMarginTop"/>
+                    
+                    <!-- Detalles Técnicos -->
+                    <Text text="Detalles del producto" class="sapUiMediumMarginTop sapUiBold"/>
+                    <List>
+                        <StandardListItem title="Altura: {products>/selectedProduct/details/height}"/>
+                        <StandardListItem title="Material: {products>/selectedProduct/details/material}"/>
+                        <StandardListItem title="Fabricante: {products>/selectedProduct/details/manufacturer}"/>
+                        <StandardListItem title="Peso: {products>/selectedProduct/details/weight}"/>
+                    </List>
+                    
+                    <!-- Variantes -->
+                    <Text text="Variantes:" class="sapUiSmallMarginTop"/>
+                    <HBox>
+                        <Button text="{products>/selectedProduct/variants/0/color}" type="Transparent" press="onSelectVariant"/>
+                        <Button text="{products>/selectedProduct/variants/1/color}" type="Transparent" press="onSelectVariant"/>
+                    </HBox>
+                    
+                    <!-- Botones de compra -->
+                    <HBox justifyContent="SpaceBetween" class="sapUiMediumMarginTop">
+                        <Button text="Comprar ahora" type="Emphasized" press="onBuyNow"/>
+                        <Button text="Agregar al carrito" type="Default" press="onAddToCart"/>
+                    </HBox>
+                </VBox>
+            </HBox>
         </content>
     </Page>
 </mvc:View>

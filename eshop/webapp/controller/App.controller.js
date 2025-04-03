@@ -6,23 +6,25 @@ sap.ui.define([
   "sap/m/ScrollContainer",
   "sap/m/Button",
   "sap/m/Popover",
-  "sap/m/library"
-], function (BaseController, MessageToast, List, StandardListItem, ScrollContainer, Button, Popover, mLibrary) {
+  "sap/m/library",
+  "sap/m/HBox",
+  "sap/m/Image",
+  "sap/m/Text"
+], function (BaseController, MessageToast, List, StandardListItem, ScrollContainer, Button, Popover, mLibrary, HBox, Image, Text) {
   "use strict";
 
   return BaseController.extend("eshop.controller.App", {
     onInit() {
-      let oHboxMenu = this.byId("HboxMenus")
+      let oHboxMenu = this.byId("HboxMenus");
       let oDataCategories = this.getOwnerComponent().getModel("categories").getData();
       let oDataSubCategories = this.getOwnerComponent().getModel("subCategories").getData();
       let oDataProducts = this.getOwnerComponent().getModel("products").getData();
 
-      this._createMenu(oHboxMenu,oDataCategories,oDataSubCategories)
+      this._createMenu(oHboxMenu, oDataCategories, oDataSubCategories);
     },
 
     _createMenu: function (oHboxMenu, oDataCategories) {
       oDataCategories.categories.forEach(category => {
-        // Crear los items de subcategorías
         let aSubCategoryItems = category.subCategories.map(subCategory => {
           return new sap.m.MenuItem({
             text: subCategory,
@@ -31,48 +33,41 @@ sap.ui.define([
             }
           });
         });
-    
-        // Crear el menú y agregar los items de subcategoría
-        let oMenu = new sap.m.Menu({
-          items: aSubCategoryItems
-        });
-    
-        // Crear el botón con menú desplegable
-        let oMenuButton = new sap.m.MenuButton({
-          text: category.name,
-          menu: oMenu
-        });
-    
-        // Agregar botón al HBox
+
+        let oMenu = new sap.m.Menu({ items: aSubCategoryItems });
+        let oMenuButton = new sap.m.MenuButton({ text: category.name, menu: oMenu });
         oHboxMenu.addItem(oMenuButton);
       });
     },
 
     onOpenPanel: function (oEvent) {
+      let oCartModel = this.getOwnerComponent().getModel("cart");
+      let aCartItems = oCartModel.getProperty("/items");
+
+      let oList = new List("cartList", {
+        items: aCartItems.map(item => new StandardListItem({
+          title: item.name,
+          info: item.price + " USD",
+          icon: item.image
+        }))
+      });
+
+      let oScrollContainer = new ScrollContainer("scrollCart", {
+        width: "100%",
+        height: "300px",
+        vertical: true,
+        content: [oList]
+      });
+
+      let oCheckoutButton = new Button({
+        text: "Finalizar Compra",
+        type: "Emphasized",
+        press: function () {
+          MessageToast.show("Compra Finalizada");
+        }
+      });
+
       if (!this._oPopover) {
-        let oList = new List("cartList", {
-          items: [
-            new StandardListItem({ title: "Producto 1", info: "20 USD" }),
-            new StandardListItem({ title: "Producto 2", info: "15 USD" }),
-            new StandardListItem({ title: "Producto 3", info: "30 USD" })
-          ]
-        });
-
-        let oScrollContainer = new ScrollContainer("scrollCart", {
-          width: "100%",
-          height: "300px",
-          vertical: true,
-          content: [oList]
-        });
-
-        let oCheckoutButton = new Button({
-          text: "Finalizar Compra",
-          type: "Emphasized",
-          press: function () {
-            MessageToast.show("Compra Finalizada");
-          }
-        });
-
         this._oPopover = new Popover({
           placement: mLibrary.PlacementType.Left,
           showHeader: true,
@@ -80,6 +75,10 @@ sap.ui.define([
           contentWidth: "300px",
           content: [oScrollContainer, oCheckoutButton]
         });
+      } else {
+        this._oPopover.removeAllContent();
+        this._oPopover.addContent(oScrollContainer);
+        this._oPopover.addContent(oCheckoutButton);
       }
 
       this._oPopover.openBy(oEvent.getSource());

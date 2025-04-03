@@ -1,7 +1,8 @@
 sap.ui.define([
     "sap/ui/core/UIComponent",
-    "eshop/model/models"
-], (UIComponent, models) => {
+    "eshop/model/models",
+    "sap/ui/model/json/JSONModel"
+], (UIComponent, models,JSONModel) => {
     "use strict";
 
     return UIComponent.extend("eshop.Component", {
@@ -22,6 +23,12 @@ sap.ui.define([
             // enable routing
             this.getRouter().initialize();
             
+            let oCartModel = new JSONModel({
+                items: [],
+                total: 0
+            });
+            this.setModel(oCartModel, "cart");
+
         }
     });
 });

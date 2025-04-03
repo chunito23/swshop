@@ -5,8 +5,12 @@ sap.ui.define([
 
     return BaseController.extend("eshop.controller.Main", {
         onInit: function () {
+            this._loadFeatureProducts();
             this._loadProducts();
         },
+
+
+        _loadFeatureProducts() { },
 
         _loadProducts: function () {
             const oPage = this.byId("page");
