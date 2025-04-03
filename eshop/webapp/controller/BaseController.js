@@ -6,11 +6,7 @@ sap.ui.define([
     "use strict";
 
     return Controller.extend("eshop.controller.BaseController", {
-        /**
-         * Convenience method for accessing the router.
-         * @public
-         * @returns {sap.ui.core.routing.Router} the router for this component
-         */
+
         getRouter: function () {
             return this.getOwnerComponent().getRouter();
         },
@@ -26,31 +22,17 @@ sap.ui.define([
             }
         },
 
-        /**
-         * Convenience method for getting the model by name.
-         * @public
-         * @param {string} sName the model name
-         * @returns {sap.ui.model.Model} the model instance
-         */
+
         getModel: function (sName) {
             return this.getView().getModel(sName);
         },
 
-        /**
-         * Convenience method for setting the model in every view of the app.
-         * @public
-         * @param {sap.ui.model.Model} oModel the model instance
-         * @param {string} sName the model name
-         */
+
         setModel: function (oModel, sName) {
             return this.getView().setModel(oModel, sName);
         },
 
-        /**
-         * Convenience method for getting the resource bundle.
-         * @public
-         * @returns {sap.ui.model.resource.ResourceModel} the resourceModel of the component
-         */
+  
         getResourceBundle: function () {
             return this.getOwnerComponent().getModel("i18n").getResourceBundle();
         },
@@ -78,6 +60,49 @@ sap.ui.define([
             this._updateCartTotal();
 
             console.log("Carrito actualizado:", oCartModel.getProperty("/items"));
+        },
+
+        onRemoveFromCart: function (oEvent) {
+            // Obtener el modelo del carrito
+            let oCartModel = this.getOwnerComponent().getModel("cart");
+            
+            // Obtener la lista actual de productos en el carrito
+            let aCartItems = oCartModel.getProperty("/items");
+        
+            // Obtener el contexto del ítem seleccionado
+            let oItem = oEvent.getSource();
+            let oCtx = oItem.getBindingContext("cart");
+        
+            // Obtener el objeto del producto
+            let oProductToRemove = oCtx.getObject();
+
+            let aUpdatedCart
+
+            if (oProductToRemove.quantity > 1){
+                oProductToRemove.quantity -= 1
+                aUpdatedCart = [...aCartItems]
+
+            }else{
+                aUpdatedCart = aCartItems.filter(item => item.id !== oProductToRemove.id);
+            }
+        
+            // Filtrar la lista para excluir el producto que se quiere eliminar
+            
+        
+            // Actualizar el modelo con la nueva lista de productos
+            oCartModel.setProperty("/items", aUpdatedCart);
+            this._updateCartTotal()
+            // Mostrar mensaje de confirmación
+            sap.m.MessageToast.show(`${oProductToRemove.name} eliminado del carrito`);
+        },
+        
+        onProductPress: function (oEvent) {
+            let oItem = oEvent.getSource();
+            let oCtx = oItem.getBindingContext("products");
+            let oObject = oCtx.getObject()
+            this.getOwnerComponent().getRouter().navTo("Detail", {
+                productId: oObject.id
+            });
         },
 
 

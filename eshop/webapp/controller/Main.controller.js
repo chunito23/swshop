@@ -10,14 +10,7 @@ sap.ui.define([
             this.getView().setModel(this.getOwnerComponent().getModel("products"), "products");
         },
 
-        onProductPress: function (oEvent) {
-            let oItem = oEvent.getSource();
-            let oCtx = oItem.getBindingContext("products");
-            let oObject = oCtx.getObject()
-            this.getOwnerComponent().getRouter().navTo("Detail", {
-                productId: oObject.id
-            });
-        },
+        
 
         onAddToCartMain: function (oEvent) {
             // Obtener el contexto del producto clickeado

@@ -1,66 +1,107 @@
+
 .categoryTitle {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     font-weight: bold;
-    margin: 16px 0;
-    color: #333;
+    margin: 20px 0;
+    color: #222;
+    text-align: center;
 }
 
 .categoryCarousel {
-    margin-bottom: .5gap;
+    margin-bottom: 20px;
 }
 
-.sapMCrsl {
+/* ----- Carrito ----- */
+#cartPopover {
+    border-radius: 12px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    padding: 12px;
+}
+
+#cartList {
     padding: 10px;
 }
 
-.productCard {
+#cartList .sapMLIB {
     padding: 12px;
-    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    transition: background-color 0.2s ease-in-out;
+}
+
+
+#cartList .sapMText {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #444;
+}
+
+/* ----- Productos ----- */
+.productCard {
+    padding: 14px;
+    border: 1px solid #ddd;
     border-radius: 12px;
-    box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.1);
-    background-color: #fff;
+    box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-    margin: 10px;
+    margin: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .productCard:hover {
     transform: scale(1.05);
-    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 4px 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.productCard .sapMImage {
+    border-radius: 10px;
+    object-fit: cover;
 }
 
 .productName {
     font-weight: bold;
-    font-size: 1.1rem;
-    margin-top: 8px;
-    color: #444;
+    font-size: 1.2rem;
+    margin-top: 10px;
+    color: #333;
     text-align: center;
 }
 
 .productDescription {
-    font-size: 0.9rem;
-    color: #666;
-    text-align: center;
-}
-
-.productCard .sapMImage {
-    border-radius: 8px;
-    object-fit: cover;
-}
-
-.productCard .sapMObjectNumber {
-    text-align: center;
-    font-size: 1.2rem;
-}
-
-.productCard .sapMObjectStatus {
-    text-align: center;
     font-size: 1rem;
-    margin-top: 8px;
+    color: #555;
+    text-align: center;
+    margin-top: 4px;
 }
 
+/* ----- Botones ----- */
+.sapMBtn {
+    border-radius: 8px !important;
+    padding: 8px 12px;
+    transition: background-color 0.2s ease-in-out, transform 0.1s ease-in-out;
+}
+
+.sapMBtn:hover {
+    transform: scale(1.05);
+}
+
+.sapMBtn[type="Emphasized"] {
+    background-color: #ff6600 !important;
+    color: white !important;
+}
+
+.sapMBtn[type="Reject"] {
+    background-color: #ff3b3b !important;
+    color: white !important;
+}
+
+/* ----- Menú de Categorías ----- */
 .categoryCarousel .sapMCrslPage {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 16px;
+    gap: 20px;
+}
+
+*:focus {
+    outline: none !important;
 }

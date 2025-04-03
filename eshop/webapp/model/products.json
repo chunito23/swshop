@@ -117,7 +117,7 @@
             "price": 89.99,
             "currency": "USD",
             "description": "Figura de acción de Kylo Ren con detalles en su casco y capa, confeccionada con gran realismo.",
-            "image": "assets/images/kylo_ren.png",
+            "image": "assets/images/kylo.jpg",
             "stock": 15,
             "rating": 4.3,
             "details": {
@@ -154,7 +154,7 @@
             "price": 199.99,
             "currency": "USD",
             "description": "Réplica de sable de luz inspirada en el de Luke Skywalker, ideal para exhibición o coleccionismo.",
-            "image": "assets/images/sable_luke.png",
+            "image": "assets/images/sable1.webp",
             "stock": 10,
             "rating": 4.6,
             "details": {
@@ -191,7 +191,7 @@
             "price": 209.99,
             "currency": "USD",
             "description": "Réplica de sable de luz rojo, emblemática en la figura de Darth Vader.",
-            "image": "assets/images/sable_vader.png",
+            "image": "assets/images/sable2.jpg",
             "stock": 8,
             "rating": 4.7,
             "details": {
@@ -222,7 +222,7 @@
             "price": 29.99,
             "currency": "USD",
             "description": "Poster de alta calidad con impresión de una épica batalla espacial en el universo Star Wars.",
-            "image": "assets/images/poster_batalla.png",
+            "image": "assets/images/poster2.jpg",
             "stock": 50,
             "rating": 4.2,
             "details": {
@@ -246,7 +246,7 @@
             "price": 24.99,
             "currency": "USD",
             "description": "Vibrante collage con los personajes más icónicos de la saga.",
-            "image": "assets/images/poster_iconos.png",
+            "image": "assets/images/poster1.jpg",
             "stock": 70,
             "rating": 4.4,
             "details": {
@@ -269,7 +269,7 @@
             "price": 14.99,
             "currency": "USD",
             "description": "Taza temática con diseños icónicos de Star Wars para los fans más apasionados.",
-            "image": "assets/images/taza.png",
+            "image": "assets/images/taza.webp",
             "stock": 100,
             "rating": 4.0,
             "details": {
@@ -305,7 +305,7 @@
             "price": 9.99,
             "currency": "USD",
             "description": "Llavero con el emblema del Imperio. Un accesorio pequeño pero lleno de identidad.",
-            "image": "assets/images/llavero.png",
+            "image": "assets/images/llavero.jpeg",
             "stock": 150,
             "rating": 4.3,
             "details": {
@@ -326,7 +326,7 @@
             "price": 299.99,
             "currency": "USD",
             "description": "Modelo a escala del icónico caza estelar X-Wing con detalles precisos y partes móviles.",
-            "image": "assets/images/xwing.png",
+            "image": "assets/images/x-wing.webp",
             "stock": 5,
             "rating": 4.8,
             "details": {
@@ -350,7 +350,7 @@
             "price": 499.99,
             "currency": "USD",
             "description": "Magnífico modelo a escala del Destructor Estelar con múltiples detalles, ideal para los coleccionistas.",
-            "image": "assets/images/destructor.png",
+            "image": "assets/images/destructor.jpg",
             "stock": 3,
             "rating": 4.9,
             "details": {
@@ -374,7 +374,7 @@
             "price": 599.99,
             "currency": "USD",
             "description": "Modelo a escala detallado del legendario Halcón Milenario con interior iluminado y sonidos originales.",
-            "image": "assets/images/halcon_milenario.png",
+            "image": "assets/images/halcon.webp",
             "stock": 8,
             "rating": 4.9,
             "details": {
@@ -412,7 +412,7 @@
             "price": 149.99,
             "currency": "USD",
             "description": "Réplica de casco de Stormtrooper con acabados de alta calidad y detalles precisos.",
-            "image": "assets/images/casco_stormtrooper.png",
+            "image": "assets/images/cascostorm.webp",
             "stock": 20,
             "rating": 4.6,
             "details": {
@@ -437,7 +437,7 @@
             "price": 69.99,
             "currency": "USD",
             "description": "Figura de Baby Yoda (Grogu) de 'The Mandalorian' con detalles realistas y accesorios.",
-            "image": "assets/images/baby_yoda.png",
+            "image": "assets/images/babyYoda.webp",
             "stock": 50,
             "rating": 4.8,
             "details": {
@@ -475,7 +475,7 @@
             "price": 189.99,
             "currency": "USD",
             "description": "Réplica del sable de luz de Rey con efectos luminosos y sonidos auténticos.",
-            "image": "assets/images/sable_rey.png",
+            "image": "assets/images/sable3.jpg",
             "stock": 15,
             "rating": 4.7,
             "details": {
@@ -499,7 +499,7 @@
             "price": 349.99,
             "currency": "USD",
             "description": "Set LEGO de construcción del icónico vehículo AT-AT con más de 1800 piezas y minifiguras.",
-            "image": "assets/images/lego_atat.png",
+            "image": "assets/images/legoat.jpg",
             "stock": 12,
             "rating": 4.8,
             "details": {
@@ -524,7 +524,7 @@
             "price": 199.99,
             "currency": "USD",
             "description": "Réplica premium del casco de Boba Fett con detalles desgastados y visor funcional.",
-            "image": "assets/images/casco_boba.png",
+            "image": "assets/images/cascoboba.webp",
             "stock": 15,
             "rating": 4.9,
             "details": {
@@ -549,7 +549,7 @@
             "price": 109.99,
             "currency": "USD",
             "description": "Figura articulada del Mandaloriano con armadura beskar, capa y arsenal completo de armas.",
-            "image": "assets/images/mando.png",
+            "image": "assets/images/manda.webp",
             "stock": 22,
             "rating": 4.8,
             "details": {
@@ -587,7 +587,7 @@
             "price": 249.99,
             "currency": "USD",
             "description": "Modelo detallado del clásico caza TIE Fighter con cabina iluminada y efectos de sonido.",
-            "image": "assets/images/tie_fighter.png",
+            "image": "assets/images/imperial.jpg",
             "stock": 10,
             "rating": 4.7,
             "details": {
@@ -612,7 +612,7 @@
             "price": 34.99,
             "currency": "USD",
             "description": "Puzzle panorámico de 1000 piezas que recrea una escena épica de toda la saga Star Wars.",
-            "image": "assets/images/puzzle_sw.png",
+            "image": "assets/images/puzzle.jpg",
             "stock": 40,
             "rating": 4.5,
             "details": {
@@ -636,7 +636,7 @@
             "price": 219.99,
             "currency": "USD",
             "description": "Réplica del inestable sable de luz de Kylo Ren con efecto de hoja irregular y empuñadura cruciforme.",
-            "image": "assets/images/sable_kylo.png",
+            "image": "assets/images/sable4.jpg",
             "stock": 12,
             "rating": 4.6,
             "details": {
@@ -661,7 +661,7 @@
             "price": 89.99,
             "currency": "USD",
             "description": "Figura de acción de Ahsoka Tano con sus emblemáticos sables de luz duales en posición de combate.",
-            "image": "assets/images/ahsoka.png",
+            "image": "assets/images/ashoka.jpg",
             "stock": 18,
             "rating": 4.8,
             "details": {
@@ -699,7 +699,7 @@
             "price": 149.99,
             "currency": "USD",
             "description": "Réplica de la chaqueta naranja de piloto de X-Wing con emblemas de la Alianza Rebelde.",
-            "image": "assets/images/chaqueta_piloto.png",
+            "image": "assets/images/chaqueta.jpg",
             "stock": 25,
             "rating": 4.7,
             "details": {

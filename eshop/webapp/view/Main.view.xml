@@ -13,7 +13,7 @@
                             <pages>
                                 <HBox wrap="Wrap" items="{products>/products}"  justifyContent="Center" alignContent="Center">
                                     <CustomListItem id="ProductCard" type="Active" press="onProductPress" visible="{= ${categories>subCategories}.includes(${products>subcategoryId})}">
-                                        <VBox width="250px" class="productCard">
+                                        <VBox width="300px" class="productCard">
                                             <Image src="{products>image}" width="100%" height="200px" decorative="false"/>
                                             <Text text="{products>name}" wrapping="true" class="productName"/>
                                             <ObjectNumber number="{products>price}" unit="{products>currency}" state="Success"/>

@@ -97,6 +97,13 @@
           "target": [
             "Detail"
           ]
+        },
+        {
+          "name": "SubCategory",
+          "pattern": "SubCategory/{subId}",
+          "target": [
+            "SubCategory"
+          ]
         }
       ],
       "targets": {
@@ -107,6 +114,10 @@
         "Detail": {
           "id": "Detail",
           "name": "Detail"
+        },
+        "SubCategory": {
+          "id": "SubCategory",
+          "name": "SubCategory"
         }
       }
     },

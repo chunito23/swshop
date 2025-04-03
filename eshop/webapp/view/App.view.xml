@@ -4,14 +4,19 @@
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m"
 >
-    <!-- Toolbar con 3 Secciones (Izquierda, Centro, Derecha) -->
     <Toolbar
         id="toolbar"
         height="140px"
         width="100%"
     >
-        <!-- Sección Izquierda -->
-        <FlexBox wrap="Wrap" width="100%" height="100%" alignItems="Center" justifyContent="SpaceAround"> 
+        <FlexBox
+            wrap="Wrap"
+            width="100%"
+            height="100%"
+            alignItems="Center"
+            justifyContent="SpaceAround"
+        >
+            <!-- Sección Izquierda -->
             <VBox
                 class="sapUiVisibleOnlyOnDesktop"
                 alignItems="Center"
@@ -29,7 +34,6 @@
                 />
             </VBox>
 
-            <!-- Espacio flexible para separar -->
             <ToolbarSpacer />
 
             <!-- Sección Central -->
@@ -38,8 +42,10 @@
                 justifyContent="Center"
             >
                 <SearchField placeholder="Buscar producto..." />
-                <HBox wrap="Wrap" id="HboxMenus">
-                </HBox>
+                <HBox
+                    wrap="Wrap"
+                    id="HboxMenus"
+                />
             </VBox>
 
             <ToolbarSpacer />
@@ -66,12 +72,68 @@
                     />
                     <Button
                         icon="sap-icon://home"
-                        press=".onOpenPanel"
+                        press=".goHome" 
                     />
                 </HBox>
             </VBox>
         </FlexBox>
     </Toolbar>
+
+    <!-- Popover del carrito -->
+    <Popover
+        id="cartPopover"
+        placement="Left"
+        title="Carrito de Compras"
+        contentWidth="300px"
+    >
+        <ScrollContainer
+            width="100%"
+            height="300px"
+            vertical="true"
+        >
+            <List
+                id="cartList"
+                items="{cart>/items}"
+            >
+                <CustomListItem>
+                    <HBox
+                        justifyContent="SpaceBetween"
+                        alignItems="Center"
+                        width="100%"
+                    >
+                        <Image
+                            src="{cart>image}"
+                            width="50px"
+                            height="50px"
+                        />
+
+                        <HBox
+                            gap=".5rem"
+                            class="sapUiSmallMargin"
+                        >
+                            <Text text="{cart>name}" />
+                            <Text text="{cart>price} {cart>currency}" />
+                            <Text text="{= ${cart>quantity} + 'x'}" />
+                            <Button
+                                text="X"
+                                type="Reject"
+                                press=".onRemoveFromCart"
+                            />
+                        </HBox>
+                    </HBox>
+                </CustomListItem>
+            </List>
+        </ScrollContainer>
+        <Text
+            id="totalText"
+            text="{= 'Total: ' + ${cart>/total}}"
+        />
+        <Button
+            text="Finalizar Compra"
+            type="Emphasized"
+            press="onCheckout"
+        />
+    </Popover>
 
     <App id="app" />
 </mvc:View>

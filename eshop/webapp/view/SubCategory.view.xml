@@ -1,0 +1,31 @@
+<mvc:View
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    controllerName="eshop.controller.SubCategory"
+>
+    <Page id="pageSubCategory" title="Tienda">
+        <Text text="hola"></Text>
+        <VBox>
+            <Carousel height="100%" class="categoryCarousel">
+                <pages>
+                    <HBox wrap="Wrap" items="{filteredProducts>/products}" justifyContent="Center" alignContent="Center">
+                        <CustomListItem type="Active" press=".onProductPress">
+                            <VBox width="300px" class="productCard">
+                                <Image src="{filteredProducts>image}" width="100%" height="200px" decorative="false"/>
+                                <Text text="{filteredProducts>name}" wrapping="true" class="productName"/>
+                                <ObjectNumber number="{filteredProducts>price}" unit="{filteredProducts>currency}" state="Success"/>
+                                <Text text="{filteredProducts>description}" wrapping="true" class="productDescription"/>
+                                <ObjectStatus text="{= ${filteredProducts>stock} > 0 ? 'Stock: ' + ${filteredProducts>stock} : 'Agotado'}" 
+                                              state="{= ${filteredProducts>stock} > 0 ? 'Success' : 'Error'}"/>
+                                <HBox>
+                                    <Button text="Añadir al carrito" press="onAddToCartMain"/>
+                                    <Button text="Comprar ahora" press="onBuyNow"/>
+                                </HBox>
+                            </VBox>
+                        </CustomListItem>
+                    </HBox>
+                </pages>
+            </Carousel>
+        </VBox>
+    </Page>
+</mvc:View>
