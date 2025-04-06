@@ -55,10 +55,6 @@
         "type": "sap.ui.model.json.JSONModel",
         "uri": "model/categories.json"
       },
-      "subCategories": {
-        "type": "sap.ui.model.json.JSONModel",
-        "uri": "model/subCategories.json"
-      },
       "products": {
         "type": "sap.ui.model.json.JSONModel",
         "uri": "model/products.json"

@@ -45,7 +45,8 @@
                 <HBox
                     wrap="Wrap"
                     id="HboxMenus"
-                />
+                >
+               </HBox>
             </VBox>
 
             <ToolbarSpacer />

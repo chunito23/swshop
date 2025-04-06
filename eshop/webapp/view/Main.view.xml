@@ -1,30 +1,26 @@
-<mvc:View
-    xmlns:mvc="sap.ui.core.mvc"
-    xmlns="sap.m"
-    controllerName="eshop.controller.Main"
->
-    <Page id="page" title="Tienda">
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="eshop.controller.Main"><Page id="page" title="Tienda">
         <VBox>
             <List id="categoryList" items="{categories>/categories}">
                 <CustomListItem>
                     <VBox>
                         <Title text="{categories>name}" level="H2" class="categoryTitle"/>
-                        <Carousel height="100%" class="categoryCarousel" >
+                        <Carousel height="100%" class="categoryCarousel">
                             <pages>
-                                <HBox wrap="Wrap" items="{products>/products}"  justifyContent="Center" alignContent="Center">
+                                <HBox wrap="Wrap" items="{products>/products}" justifyContent="Center" alignContent="Center">
                                     <CustomListItem id="ProductCard" type="Active" press="onProductPress" visible="{= ${categories>subCategories}.includes(${products>subcategoryId})}">
-                                        <VBox width="300px" class="productCard">
+                                    <content>
+                                        <VBox xmlns="sap.m" width="300px" class="productCard">
                                             <Image src="{products>image}" width="100%" height="200px" decorative="false"/>
                                             <Text text="{products>name}" wrapping="true" class="productName"/>
                                             <ObjectNumber number="{products>price}" unit="{products>currency}" state="Success"/>
                                             <Text text="{products>description}" wrapping="true" class="productDescription"/>
-                                            <ObjectStatus text="{= ${products>stock} > 0 ? 'Stock: ' + ${products>stock} : 'Agotado'}" 
-                                                          state="{= ${products>stock} > 0 ? 'Success' : 'Error'}"/>
+                                            <ObjectStatus text="{= ${products>stock} &gt; 0 ? 'Stock: ' + ${products>stock} : 'Agotado'}" state="{= ${products>stock} &gt; 0 ? 'Success' : 'Error'}"/>
                                             <HBox>
                                                 <Button text="Añadir al carrito" press="onAddToCartMain"/>
                                                 <Button text="Comprar ahora" press="onBuyNow"/>
                                             </HBox>
                                         </VBox>
+                                    </content>
                                     </CustomListItem>
                                 </HBox>
                             </pages>
