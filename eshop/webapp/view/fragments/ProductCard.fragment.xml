@@ -1,0 +1,7 @@
+<!-- eshop.view.fragments.ProductCard.fragment.xml -->
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+    <VBox class="sapUiSmallMargin">
+        <Text text="{nombres>nombre}" />
+        <Button text="Ver nombre" press="onShowName" />
+    </VBox>
+</core:FragmentDefinition>

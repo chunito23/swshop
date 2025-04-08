@@ -11,36 +11,6 @@ sap.ui.define([
             this._createMenu(oHboxMenu, oDataCategories);
         },
 
-        onMenuPress: async function(oEvent) {
-            const oButton = oEvent.getSource();
-            const oCtx = oButton.getBindingContext("categories");
-            const aSubCats = oCtx.getProperty("subCategories");
-
-            // Cargar el fragmento
-            const oView = this.getView();
-
-            let oMenu = await Fragment.load({
-                id: oView.getId(), // importante para el lifecycle
-                name: "eshop.view.fragment.SubCategoryMenu",
-                controller: this
-            });
-
-            // Limpiar items viejos si el fragment ya fue creado antes
-            oMenu.destroyItems();
-
-            // Agregar subcategorías
-            aSubCats.forEach((subcat) => {
-                oMenu.addItem(new MenuItem({
-                    text: subcat,
-                    press: () => {
-                        sap.m.MessageToast.show("Subcategoría: " + subcat);
-                        // Podés hacer routing o filtrar productos acá
-                    }
-                }));
-            });
-
-            oMenu.openBy(oButton);
-        },
 
         _createMenu: function (oHboxMenu, oDataCategories) {
             let oRouter = this.getRouter(); // Guarda la referencia del router

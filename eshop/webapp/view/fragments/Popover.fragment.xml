@@ -1,0 +1,23 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core">
+    <Popover id="cartPopover" placement="Left" title="Carrito de Compras" contentWidth="300px">
+        <ScrollContainer width="100%" height="300px" vertical="true">
+            <List id="cartList" items="{cart>/items}">
+                <CustomListItem>
+                    <HBox justifyContent="SpaceBetween" alignItems="Center" width="100%">
+                        <Image src="{cart>image}" width="50px" height="50px" />
+                        <HBox gap=".5rem" class="sapUiSmallMargin">
+                            <Text text="{cart>name}" />
+                            <Text text="{cart>price} {cart>currency}" />
+                            <Text text="{= ${cart>quantity} + 'x'}" />
+                            <Button text="X" type="Reject" press=".onRemoveFromCart" />
+                        </HBox>
+                    </HBox>
+                </CustomListItem>
+            </List>
+        </ScrollContainer>
+        <Text id="totalText" text="{= 'Total: ' + ${cart>/total}}" />
+        <Button text="Finalizar Compra" type="Emphasized" press="onCheckout" />
+    </Popover>
+</core:FragmentDefinition>

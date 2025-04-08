@@ -58,6 +58,10 @@
       "products": {
         "type": "sap.ui.model.json.JSONModel",
         "uri": "model/products.json"
+      },
+      "prueba": {
+        "type": "sap.ui.model.json.JSONModel",
+        "uri": "model/prueba.json"
       }
     },
     "resources": {

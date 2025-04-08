@@ -1,0 +1,33 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core">
+    <Toolbar height="140px" width="100%">
+        <FlexBox wrap="Wrap" width="100%" height="100%" alignItems="Center" justifyContent="SpaceAround">
+            <!-- Izquierda -->
+            <VBox class="sapUiVisibleOnlyOnDesktop" alignItems="Center" justifyContent="Center">
+                <Image src="../assets/images/starwarslogo.png" width="10rem" height="4rem" />
+                <Image src="../assets/images/sable.webp" width="10rem" height="4rem" />
+            </VBox>
+
+            <ToolbarSpacer />
+
+            <!-- Centro -->
+            <VBox alignItems="Center" justifyContent="Center">
+                <SearchField placeholder="Buscar producto..." />
+                <HBox wrap="Wrap" id="HboxMenus" />
+            </VBox>
+
+            <ToolbarSpacer />
+
+            <!-- Derecha -->
+            <VBox alignItems="Center" justifyContent="Center">
+                <Image class="sapUiVisibleOnlyOnDesktop" src="../assets/images/sablederecha.jpg" width="10rem" height="4rem" />
+                <HBox>
+                    <Button icon="sap-icon://cart" press=".onOpenPanel" />
+                    <Button icon="sap-icon://customer" press=".onOpenPanel" />
+                    <Button icon="sap-icon://home" press=".goHome" />
+                </HBox>
+            </VBox>
+        </FlexBox>
+    </Toolbar>
+</core:FragmentDefinition>
